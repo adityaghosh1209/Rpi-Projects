@@ -2,12 +2,17 @@ import RPi.GPIO as GPIO
 import time
 
 class Run:
-
+    
+    
+    GPIO_TRIGGER = 0
+    GPIO_ECHO = 0
     GPIO.setmode(GPIO.BCM)
 
-    def setup(trigger, eco):
-        
-         
+    
+     
+
+    def distance(trigger, eco):
+        GPIO.setwarnings(False)
         #set GPIO Pins
         GPIO_TRIGGER = trigger
         GPIO_ECHO = eco
@@ -15,8 +20,6 @@ class Run:
         #set GPIO direction (IN / OUT)
         GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
         GPIO.setup(GPIO_ECHO, GPIO.IN)
-
-    def distance():
         # set Trigger to HIGH
         GPIO.output(GPIO_TRIGGER, True)
      
@@ -40,6 +43,7 @@ class Run:
         # multiply with the sonic speed (34300 cm/s)
         # and divide by 2, because there and back
         distance = (TimeElapsed * 34300) / 2
+     
      
         return distance
 

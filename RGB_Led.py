@@ -2,78 +2,81 @@
 
 import time, sys
 import RPi.GPIO as GPIO
-
-redPin = 11   #Set to appropriate GPIO
-greenPin = 15 #Should be set in the 
-bluePin = 13  #GPIO.BOARD format
-
-def blink(pin):
-    GPIO.setmode(GPIO.BOARD)
+class Run:
     
-    GPIO.setup(pin, GPIO.OUT)
-    GPIO.output(pin, GPIO.HIGH)
+    redPin = 0   #Set to appropriate GPIO
+    greenPin = 0 #Should be set in the 
+    bluePin = 0  #GPIO.BOARD format
+
     
-def turnOff(pin):
-    GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(pin, GPIO.OUT)
-    GPIO.output(pin, GPIO.LOW)
-    
-def redOn():
-    blink(redPin)
+    def setup(R, G, B):
+        redPin = R   #Set to appropriate GPIO
+        greenPin = G #Should be set in the 
+        bluePin = B  #GPIO.BOARD format
 
-def redOff():
-    turnOff(redPin)
+    def blink(pin):
+        #GPIO.setmode(GPIO.BOARD)
+        
+        GPIO.setup(pin, GPIO.OUT)
+        GPIO.output(pin, GPIO.HIGH)
+        
+    def turnOff(pin):
+        GPIO.setmode(GPIO.BOARD)
+        GPIO.setup(pin, GPIO.OUT)
+        GPIO.output(pin, GPIO.LOW)
+        
+    def redOn():
+        blink(redPin)
 
-def greenOn():
-    blink(greenPin)
+    def redOff():
+        turnOff(redPin)
 
-def greenOff():
-    turnOff(greenPin)
+    def greenOn():
+        blink(greenPin)
 
-def blueOn():
-    blink(bluePin)
+    def greenOff():
+        turnOff(greenPin)
 
-def blueOff():
-    turnOff(bluePin)
+    def blueOn():
+        blink(bluePin)
 
-def yellowOn():
-    blink(redPin)
-    blink(greenPin)
+    def blueOff():
+        turnOff(bluePin)
 
-def yellowOff():
-    turnOff(redPin)
-    turnOff(greenPin)
+    def yellowOn():
+        blink(redPin)
+        blink(greenPin)
 
-def cyanOn():
-    blink(greenPin)
-    blink(bluePin)
+    def yellowOff():
+        turnOff(redPin)
+        turnOff(greenPin)
 
-def cyanOff():
-    turnOff(greenPin)
-    turnOff(bluePin)
+    def cyanOn():
+        blink(greenPin)
+        blink(bluePin)
 
-def magentaOn():
-    blink(redPin)
-    blink(bluePin)
+    def cyanOff():
+        turnOff(greenPin)
+        turnOff(bluePin)
 
-def magentaOff():
-    turnOff(redPin)
-    turnOff(bluePin)
+    def magentaOn():
+        blink(redPin)
+        blink(bluePin)
 
-def whiteOn():
-    blink(redPin)
-    blink(greenPin)
-    blink(bluePin)
+    def magentaOff():
+        turnOff(redPin)
+        turnOff(bluePin)
 
-def whiteOff():
-    turnOff(redPin)
-    turnOff(greenPin)
-    turnOff(bluePin)
-    
-print("""Ensure the following GPIO connections: R-11, G-13, B-15
-Colors: Red, Green, Blue, Yellow, Cyan, Magenta, and White
-Use the format: color on/color off""")
+    def whiteOn():
+        blink(redPin)
+        blink(greenPin)
+        blink(bluePin)
 
+    def whiteOff():
+        turnOff(redPin)
+        turnOff(greenPin)
+        turnOff(bluePin)
+"""    
 def main():
     while True:
         cmd = input("-->")
@@ -114,5 +117,5 @@ def main():
     return
     
 
-main()
-    
+#main()
+    """

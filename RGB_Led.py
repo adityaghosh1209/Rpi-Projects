@@ -2,6 +2,18 @@
 
 import time, sys
 import RPi.GPIO as GPIO
+
+def blink(pin):
+        #GPIO.setmode(GPIO.BOARD)
+        
+        GPIO.setup(pin, GPIO.OUT)
+        GPIO.output(pin, GPIO.HIGH)
+
+def turnOff(pin):
+        GPIO.setmode(GPIO.BOARD)
+        GPIO.setup(pin, GPIO.OUT)
+        GPIO.output(pin, GPIO.LOW)
+
 class Run:
     
     redPin = 0   #Set to appropriate GPIO
@@ -14,16 +26,9 @@ class Run:
         greenPin = G #Should be set in the 
         bluePin = B  #GPIO.BOARD format
 
-    def blink(pin):
-        #GPIO.setmode(GPIO.BOARD)
+    
         
-        GPIO.setup(pin, GPIO.OUT)
-        GPIO.output(pin, GPIO.HIGH)
-        
-    def turnOff(pin):
-        GPIO.setmode(GPIO.BOARD)
-        GPIO.setup(pin, GPIO.OUT)
-        GPIO.output(pin, GPIO.LOW)
+    
         
     def redOn():
         blink(redPin)

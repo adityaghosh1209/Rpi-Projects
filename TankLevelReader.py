@@ -50,7 +50,7 @@ time1 = ''
 #temp.pack(fill=BOTH, expand=1)
 def percentage(part, whole):
   percentage = 100 * float(part)/float(whole)
-  return str(percentage) + "%"
+  return str(percentage)
 
 
 
@@ -66,14 +66,15 @@ def tick():
         time1 = time2
         #--------------------------- Reading and writting of temperature code
         tankupdate(round(US.distance(12, 18), 1))
+        
         print(round(US.distance(12, 18), 1))
         #print(int(temperature))
         time.sleep(3)
-        if  round(US.distance(12, 18), 1) <= float(ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "MaxL")): #low val
+        if  float(percentage(round(US.distance(12, 18), 1), float(ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "MaxCap")))) <= float(ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "MaxL")): #low val
             print("Empty:)")
-        elif round(US.distance(12, 18), 1) <= float(ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "MaxM")):#Medium Val
+        elif float(percentage(round(US.distance(12, 18), 1), float(ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "MaxCap")))) <= float(ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "MaxM")):#Medium Val
             print("half fliied :|")
-        elif round(US.distance(12, 18), 1) <= float(ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "MaxCap")): #High Val
+        elif float(percentage(round(US.distance(12, 18), 1), float(ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "MaxCap")))) <= float(ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "MaxCap")): #High Val
             print("filled:(")
     # calls itself every 200 milliseconds
     # to update the time display as needed

@@ -69,11 +69,11 @@ def tick():
         print(round(US.distance(12, 18), 1))
         #print(int(temperature))
         time.sleep(3)
-        if  round(US.distance(12, 18), 1) >= ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "MaxCap"):
+        if  round(US.distance(12, 18), 1) >= float(ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "MaxCap")):
             print("Empty:)")
-        if round(US.distance(12, 18), 1) >= ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "MaxM"):
+        if round(US.distance(12, 18), 1) >= float(ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "MaxM")):
             print("half fliied :|")
-        if round(US.distance(12, 18), 1) >= ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "MaxL"):
+        if round(US.distance(12, 18), 1) >= float(ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "MaxL")):
             print("Empty :(")
     # calls itself every 200 milliseconds
     # to update the time display as needed

@@ -1,0 +1,14 @@
+
+<saranghe>
+
+    <tankreadings name="Temperature" High="28" Low="27"></tankreadings> 
+    <data>
+        Add the content of your article here
+        <family>
+            Add the font family of your text here
+        </family>
+        <size>
+            Add the font Size of your text here
+        </size>
+    </data>
+</saranghe>

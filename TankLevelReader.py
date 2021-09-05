@@ -36,7 +36,7 @@ progessBarOne_style.configure('progessBarOne.Horizontal.TProgressbar', foregroun
 
 
 # This is the section of code which creates a progress bar
-progessBarOne=ttk.Progressbar(root, style='progessBarOne.Horizontal.TProgressbar', orient='horizontal', length=540, mode='determinate', maximum=ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "High"), value=1)
+progessBarOne=ttk.Progressbar(root, style='progessBarOne.Horizontal.TProgressbar', orient='horizontal', length=540, mode='determinate', maximum=ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "MaxCap"), value=1)
 progessBarOne.place(x=72, y=328)
 
 
@@ -69,18 +69,17 @@ def tick():
         print(round(US.distance(12, 18), 1))
         #print(int(temperature))
         time.sleep(3)
-        
+        if  round(US.distance(12, 18), 1) >= ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "MaxCap"):
+            print("Empty:)")
+        if round(US.distance(12, 18), 1) >= ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "MaxM"):
+            print("half fliied :|")
+        if round(US.distance(12, 18), 1) >= ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "MaxL"):
+            print("Empty :(")
     # calls itself every 200 milliseconds
     # to update the time display as needed
     # could use >200 ms, but display gets jerky
     progessBarOne.after(200, tick)
     
-    if percentage(round(US.distance(12, 18), 1), ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "High")) > 10:
-        print("filled")
-    else if percentage(round(US.distance(12, 18), 1), ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "High")) > 50:
-        print("half done")
-    else if percentage(round(US.distance(12, 18), 1), ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "High")) > 90:
-        print("lightly filled :(")
     
 tick()
 #tankupdate(US.distance(18, 24))

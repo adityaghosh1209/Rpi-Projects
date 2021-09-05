@@ -1,7 +1,7 @@
 
 <saranghe>
 
-    <tankreadings name="Fillamount" High="2000" ></tankreadings> 
+    <tankreadings name="Fillamount" MaxCap="2000" MaxL="50" MaxM="1000"></tankreadings> 
     <data>
         Add the content of your article here
         <family>

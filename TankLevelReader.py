@@ -74,7 +74,7 @@ def tick():
         if round(US.distance(12, 18), 1) <= float(ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "MaxM")):
             print("half fliied :|")
         if round(US.distance(12, 18), 1) <= float(ReadXMLdat.findvalue("TankReadingValue.xml", "tankreadings", "MaxCap")):
-            print("Empty :(")
+            print("filled:(")
     # calls itself every 200 milliseconds
     # to update the time display as needed
     # could use >200 ms, but display gets jerky

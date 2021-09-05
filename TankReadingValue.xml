@@ -1,7 +1,7 @@
 
 <saranghe>
 
-    <tankreadings name="Temperature" High="28" Low="27"></tankreadings> 
+    <tankreadings name="Fillamount" High="2000" ></tankreadings> 
     <data>
         Add the content of your article here
         <family>

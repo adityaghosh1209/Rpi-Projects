@@ -2,11 +2,12 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import * 
 import Ultrasonic_sensor
+import ReadXMLFileData
 import time
 
 
 US = Ultrasonic_sensor.Run
-
+ReadXMLdat = ReadXMLFileData.DataRead
 
 # This is a function which increases the progress bar value by the given increment amount
 def makeProgress():
@@ -35,7 +36,7 @@ progessBarOne_style.configure('progessBarOne.Horizontal.TProgressbar', foregroun
 
 
 # This is the section of code which creates a progress bar
-progessBarOne=ttk.Progressbar(root, style='progessBarOne.Horizontal.TProgressbar', orient='horizontal', length=540, mode='determinate', maximum=100, value=1)
+progessBarOne=ttk.Progressbar(root, style='progessBarOne.Horizontal.TProgressbar', orient='horizontal', length=540, mode='determinate', maximum=findvalue("TankReadingValue", "tankreadings", "High"), value=1)
 progessBarOne.place(x=72, y=328)
 
 

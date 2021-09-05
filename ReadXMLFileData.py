@@ -19,7 +19,7 @@ class DataRead:
         tagdata = Bs_data.find_all(tagname)
         return tagdata
 
-    def findvalue(file, Tagname, AttributeName, AttributeValue, AttributeReturnName):
+    def findvalue(file, Tagname, AttributeReturnName):# AttributeName, AttributeValue,
         # Reading the data inside the xml
         # file to a variable under the name
         # data

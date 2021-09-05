@@ -6,7 +6,7 @@ class Run:
     
     GPIO_TRIGGER = 0
     GPIO_ECHO = 0
-    GPIO.setmode(GPIO.BCM)
+    GPIO.setmode(GPIO.BOARD)
 
     
      

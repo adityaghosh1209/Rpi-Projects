@@ -76,7 +76,7 @@ class Run:
         turnOff(redPin)
         turnOff(greenPin)
         turnOff(bluePin)
-"""    
+    
 def main():
     while True:
         cmd = input("-->")
@@ -118,4 +118,4 @@ def main():
     
 
 #main()
-    """
+    

@@ -34,7 +34,7 @@ class DataRead:
 
         # Using find() to extract attributes
         # of the first instance of the tag
-        b_name = Bs_data.find(Tagname, {AttributeName:AttributeValue})
+        b_name = Bs_data.find(Tagname, )#{AttributeName:AttributeValue}
 
         #print(b_name)
 
